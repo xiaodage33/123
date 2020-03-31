@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息</title>
+</head>
+<body>
+<table class="row" style="margin-top: 10px" border="10px" >
+{% for row in goods_list %}
+     <tr style="text-align: center">
+    <td>  {{ row.id }}</td>
+    <td>  {{ row.goods_name }} </td>
+    <td>  {{ row.goods_price }} </td>
+    <td> <a href="/purchase/{{ row.id }}">购买 </a> </td>
+
+
+
+{% endfor %}
+    </tr></table>
+</body>
+</html>
