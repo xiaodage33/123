@@ -55,6 +55,7 @@ def show_msg(request):
         sign = params.pop('sign', None)  # 获取sign的值
         # 对sign参数进行验证
         status = alipay.verify(params, sign)
+        print(status,"哈哈")
         if status:
             return render(request, 'show_msg.html', {'msg': '支付成功'})
         else:
@@ -62,6 +63,3 @@ def show_msg(request):
     else:
         return render(request, 'show_msg.html', {'msg': '只支持GET请求，不支持其它请求'})
 
-def ab(request,num):
-
-    return HttpResponse(num)
